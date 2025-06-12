@@ -29,9 +29,3 @@ class ErrorResponse(BaseModel):
     details: Optional[dict] = Field(default=None, description="에러 상세 정보")
     timestamp: datetime = Field(default_factory=datetime.now, description="에러 발생 시간")
 
-class HealthStatus(str, Enum):
-    """건강 상태 열거형"""
-    HEALTHY = "healthy"
-    WARNING = "warning"
-    CRITICAL = "critical"
-    UNKNOWN = "unknown"

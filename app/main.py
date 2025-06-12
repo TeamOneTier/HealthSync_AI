@@ -5,7 +5,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse, JSONResponse
 from fastapi.exceptions import RequestValidationError
-from app.views.health_views import health_router
+from app.views.status_views import status_router
 from app.config.settings import settings
 from app.models.base import ErrorResponse
 import time
@@ -61,7 +61,7 @@ async def add_process_time_header(request: Request, call_next):
     return response
 
 # API 라우터 등록
-app.include_router(health_router, prefix=settings.api_v1_prefix)
+app.include_router(status_router, prefix=settings.api_v1_prefix)
 
 @app.get("/", include_in_schema=False)
 async def root():

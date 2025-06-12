@@ -3,8 +3,12 @@ HealthSync AI 기본 컨트롤러 클래스
 """
 from fastapi import HTTPException, status
 from typing import Any
+
+from fastapi.params import Depends
+
+from app.core.dependencies import get_settings
 from app.models.base import BaseResponse, ErrorResponse
-from app.config.settings import settings
+from app.config.settings import settings, Settings
 import logging
 from datetime import datetime
 
