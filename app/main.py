@@ -22,13 +22,6 @@ app = FastAPI(
     description=f"""
 {settings.app_description}
 
-### 기능
-
-- ✅ **헬스체크**: 서비스 상태 모니터링
-- ✅ **자동 문서화**: Swagger UI & ReDoc
-- ✅ **성능 지표**: 메모리 사용량, 응답시간
-- ✅ **로깅**: 구조화된 로그 시스템
-
 ### 기술 스택
 
 - **Framework**: FastAPI {settings.app_version}
